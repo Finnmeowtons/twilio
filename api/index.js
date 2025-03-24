@@ -16,7 +16,9 @@ const authToken = process.env.TWILIO_AUTH_TOKEN;
 const twilioPhoneNumber = "+12185229850";
 const client = Twilio(accountSid, authToken);
 
+console.log("Hi!")
 app.post('/send-otp', async (req, res) => {
+  console.log("sending otp")
   const { phone, otp } = req.body;
 console.log(phone + otp)
   if (!phone || !otp) {

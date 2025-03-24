@@ -18,17 +18,18 @@ const client = Twilio(accountSid, authToken);
 
 app.post('/send-otp', async (req, res) => {
   const { phone, otp } = req.body;
-
+console.log(phone + otp)
   if (!phone || !otp) {
     return res.status(400).json({ error: 'Phone number and OTP are required' });
   }
 
   try {
-    const message = await client.messages.create({
-      body: `Your verification code is: ${otp}`,
-      from: twilioPhoneNumber,
-      to: phone,
-    });
+    client.messages
+    .create({
+        body: 'wasdwasdas',
+        from: '+12185229850',
+        to: '+639192534555'
+    })
 
     res.status(200).json({ success: true, messageSid: message.sid });
   } catch (error) {

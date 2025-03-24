@@ -24,14 +24,13 @@ console.log(phone + otp)
   }
 
   try {
-    client.messages
-    .create({
+    client.messages.create({
         body: otp,
         from: twilioPhoneNumber,
         to: phone
     })
 
-    res.status(200).json({ success: true, messageSid: message.sid });
+    res.status(200).json({ success: true });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

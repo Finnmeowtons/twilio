@@ -13,7 +13,7 @@ app.use(cors({
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
-const twilioPhoneNumber = "+15392810659";
+const twilioPhoneNumber = "+12185229850";
 const client = Twilio(accountSid, authToken);
 
 app.post('/send-otp', async (req, res) => {
@@ -26,9 +26,9 @@ console.log(phone + otp)
   try {
     client.messages
     .create({
-        body: 'wasdwasdas',
-        from: '+12185229850',
-        to: '+639192534555'
+        body: otp,
+        from: twilioPhoneNumber,
+        to: phone
     })
 
     res.status(200).json({ success: true, messageSid: message.sid });

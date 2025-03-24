@@ -13,7 +13,7 @@ app.use(cors({
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
-const twilioPhoneNumber = "+18312371528";
+const twilioPhoneNumber = "+15392810659";
 const client = Twilio(accountSid, authToken);
 
 app.post('/send-otp', async (req, res) => {

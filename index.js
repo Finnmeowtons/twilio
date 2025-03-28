@@ -48,16 +48,6 @@ app.post("/send-email-otp", async (req, res) => {
     res.status(500).json({ error: error }); 
   }
 
-  // sgMail
-  //   .send(emailMsg)
-  //   .then(() => {
-  //     console.log("Email sent");
-  //     res.status(200).json({ success: true });
-  //   })
-  //   .catch((error) => {
-  //     console.error(error);
-  //     res.status(400).json({ error: "Error with email" });
-  //   });
 });
 
 app.post("/send-otp", async (req, res) => {
